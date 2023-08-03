@@ -1,4 +1,5 @@
 name: cli-yargs-countentriesindirectory
+
 on:
   push:
     branches:
