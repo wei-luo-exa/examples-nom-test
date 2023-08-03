@@ -1,0 +1,18 @@
+name: cli-yargs-countentriesindirectory
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: npm install
+      run: npm install
+      working-directory: './cli/yargs/countEntriesInDirectory'
+    - name: npm run test
+      run: npm run test
+      working-directory: './cli/yargs/countEntriesInDirectory'
