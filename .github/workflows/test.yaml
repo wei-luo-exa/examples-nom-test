@@ -15,8 +15,8 @@ jobs:
       uses: actions/setup-node@v3
     - name: Setup private repo credentials for private modules
       run: |
-        #git config --global url."https://token:${{ secrets.GH_TOKEN }}@github.com/Exabeam".insteadOf "https://github.com/Exabeam"
-        git config --global url."https://token:${{ secrets.GH_TOKEN }}@github.com/".insteadOf "ssh://git@github.com/"
+        git config --global credential.username "jenkins-ecp-exa"
+        git config --global url."https://token:${{ secrets.GH_TOKEN }}@github.com/".insteadOf "https://github.com/"
       shell: sh
     - name: Cache node modules
       id: cache-npm
