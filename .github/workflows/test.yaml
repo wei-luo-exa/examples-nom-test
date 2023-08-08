@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+          persist-credentials: false
     - name: Use Node.js 
       uses: actions/setup-node@v3
     - name: Setup private repo credentials for private modules
@@ -22,7 +24,7 @@ jobs:
         git config --global user.email "jenkins-ecp-exa@exabeam.cloud"
         git config --global credential.username "jenkins-ecp-exa"
         git config --global credential.helper "store"
-        git config --global url."https://github.com/Exabeam".insteadOf "ssh://git@github.com/Exabeam"
+        #git config --global url."https://github.com/Exabeam".insteadOf "ssh://git@github.com/Exabeam"
         git config --global url."https://token:${{ secrets.GH_TOKEN }}@github.com/Exabeam".insteadOf "https://github.com/Exabeam"
       shell: sh
     - name: gitconfig
