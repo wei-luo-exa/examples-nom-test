@@ -20,7 +20,7 @@ jobs:
       uses: actions/setup-node@v3
     - name: Setup private repo credentials for private modules
       run: |
-        git config --global url."https://token:${{ secrets.GH_TOKEN }}@github.com".insteadOf "https://github.com/"
+        git config --global url."https://token:${{ secrets.GH_TOKEN }}@github.com/".insteadOf "https://github.com/"
       shell: sh
     - name: gitconfig
       run: cat ~/.gitconfig
