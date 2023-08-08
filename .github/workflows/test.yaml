@@ -22,7 +22,7 @@ jobs:
         git config --global user.email "jenkins-ecp-exa@exabeam.cloud"
         git config --global credential.username "jenkins-ecp-exa"
         git config --global credential.helper "store"
-        git config --global url."https://token:${{ secrets.GH_TOKEN }}@github.com/".insteadOf "https://github.com/"
+        git config --global url."https://token:${{ secrets.GH_TOKEN }}@github.com/${{ inputs.org }}".insteadOf "https://github.com/${{ inputs.org }}"
       shell: sh
     - name: gitconfig
       run: cat ~/.gitconfig
